@@ -1,4 +1,4 @@
-# AirBnB Clone - The Console
+# AirBnB Clone - RESTful API
 The console is the first segment of the AirBnB project at Holberton School that will collectively cover fundamental concepts of higher level programming. The goal of AirBnB project is to eventually deploy our server a simple copy of the AirBnB Website(HBnB). A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
 
 #### Functionalities of this command interpreter:
@@ -18,6 +18,20 @@ The console is the first segment of the AirBnB project at Holberton School that 
 * [Authors](#authors)
 * [License](#license)
 
+## General Objectives
+* What REST means
+* What API means
+* What CORS means
+* What is an API
+* What is a REST API
+* What are other type of APIs
+* Which is the HTTP method to retrieve resource(s)
+* Which is the HTTP method to create a resource
+* Which is the HTTP method to update resource
+* Which is the HTTP method to delete resource
+* How to request REST API
+
+
 ## Environment
 This project is interpreted/tested on Ubuntu 14.04 LTS using python3 (version 3.4.3)
 
@@ -26,6 +40,22 @@ This project is interpreted/tested on Ubuntu 14.04 LTS using python3 (version 3.
 * Access AirBnb directory: `cd AirBnB_clone`
 * Run hbnb(interactively): `./console` and enter command
 * Run hbnb(non-interactively): `echo "<command>" | ./console.py`
+
+## Resources
+***Read or watch:***
+
+* [**REST API** concept page](https://intranet.hbtn.io/concepts/45): (*Available only Holby students*)
+* [Learn REST: A RESTful Tutorial](https://www.restapitutorial.com/)
+* [Designing a RESTful API with Python and Flask](https://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask)
+* [HTTP access control (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
+* [Flask cheatsheet](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/301/flask_cheatsheet.pdf)
+* [What are Flask Blueprints, exactly?](https://stackoverflow.com/questions/24420857/what-are-flask-blueprints-exactly)
+* [Flask](https://palletsprojects.com/p/flask/)
+* [Modular Applications with Blueprints](https://flask.palletsprojects.com/en/1.1.x/blueprints/)
+* [Flask tests](https://flask.palletsprojects.com/en/1.1.x/testing/)
+* [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/)
+* [AirBnB clone - RESTful API | 4 AirBnB API](https://www.youtube.com/watch?v=LrQhULlFJdU)
+
 
 ## File Descriptions
 [console.py](console.py) - the console contains the entry point of the command interpreter. 
@@ -156,6 +186,8 @@ No known bugs at this time.
 ## Authors
 Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twitter.com/alexa_orrico)  
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)
+Johanne Lopez - [GitHub](https://github.com/Johanne101)
+Luis M. Rivera - [GitHub](https://github.com/Luijma)
 
 Second part of Airbnb: Joann Vuong
 ## License

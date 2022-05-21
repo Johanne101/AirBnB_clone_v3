@@ -21,9 +21,12 @@ The console is the first segment of the AirBnB project at Holberton School that 
 ## General Objectives
 
 | **Acronyms** | **Meaning** |
+|:------------:|-------------|
 |REST | “REpresentational State Transfer” |
 |API | "Application Programming Interface" |
 |CORS | "Cross-Origin Resource Sharing" |
+|URI | "Uniform Resource Indicator" |
+
 
 * What is an API?
 * What is a REST API?

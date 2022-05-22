@@ -70,19 +70,20 @@ class FileStorage:
         self.reload()
 
     def get(self, cls, id):
-        """
-        Returns the object based on the class name and its ID, or
-        None if not found
-        """
-        if cls not in classes.values():
+
+        ''' Returns object based on class and its id, or None '''
+        if cls.__name__ in classes:
+            key = classes[cls.__name__] + '.' + id
+
+        else:
+            key = None
+
+        if key is not None:
+            if key in self.__objects:
+                return self.__objects[key]
+        else:
             return None
 
-        new_cls = models.storage.all(cls)
-        for value in new_cls.values():
-            if (value.id == id):
-                return value
-
-        return None
 
     def count(self, cls=None):
         """

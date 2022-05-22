@@ -15,6 +15,12 @@ def teardown_storage(exception):
     storage.close()
 
 
+@app.errorhandler(404)
+def resource_not_found(e):
+    err = {"error": "Not found"}
+    return (jsonify(err)), 404
+
+
 if __name__ == '__main__':
     hbnb_api_host = getenv('HBNB_API_HOST')
     hbnb_api_port = getenv('HBNB_API_PORT')

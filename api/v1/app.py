@@ -29,6 +29,6 @@ if __name__ == '__main__':
     elif hbnb_api_host is None:
         app.run(host='0.0.0.0', port=api_port, threaeded=True)
     elif hbnb_api_port is None:
-        app.run(host=api_host, port=5000, threaded=True)
+        app.run(host=hbnb_api_host, port=5000, threaded=True)
     else:
-        app.run(host=api_host, port=api_port, threaded=True)
+        app.run(host=hbnb_api_host, port=hbnb_api_port, threaded=True)

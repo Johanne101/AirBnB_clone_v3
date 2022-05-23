@@ -7,7 +7,7 @@ from models.user import User
 from werkzeug.exceptions import HTTPException
 
 
-@app_views.route('users', methods=['POST, GET'] strict_slashes=False)
+@app_views.route('users', methods=['POST, GET'], strict_slashes=False)
 def all_users():
     if request.method == 'POST':
         user_created = None

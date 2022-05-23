@@ -7,7 +7,7 @@ from models.amenity import Amenity
 from werkzeug.exceptions import HTTPException
 
 
-@app_views.route('amenities', methods=['POST, GET'] strict_slashes=False)
+@app_views.route('amenities', methods=['POST, GET'], strict_slashes=False)
 def all_amenities():
     if request.method == 'POST':
         amenity_created = None

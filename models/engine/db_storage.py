@@ -98,7 +98,7 @@ class DBStorage:
         new_cls = classes.values()
 
         if cls is None:
-            reutrn len(self.all())
+            return len(self.all())
 
         for entry in self.all().keys():
             if cls.__name__ in entry:

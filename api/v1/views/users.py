@@ -21,10 +21,7 @@ def all_users():
             user_created.save()
             return jsonify(user_created.to_dict()), 201
         except Exception as e:
-            if isinstance(e, HTTPException):
-                abort(400, description='Not a JSON')
-            else:
-                abort(500)
+            abort(400, description='Not a JSON')
 
         users = storage.all('User')
         user_list = []
@@ -52,8 +49,5 @@ def user_by_id(user_id):
             user.save()
             return jsonify(user.to_dict()), 200
         except Exception as e:
-            if isinstance(e, HTTPException):
-                abort(400, description='Not a JSON')
-            else:
-                abort(500)
+            abort(400, description='Not a JSON')
     return jsonify(user.to_dict())

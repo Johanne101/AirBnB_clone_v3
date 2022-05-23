@@ -20,10 +20,7 @@ def all_places():
             place_name = request.get('name')
             user_id = request_dict.get('user_id')
         except Exception as e:
-            if isinstance(e, HTTPException):
-                abort(400, description='Not a JSON')
-            else:
-                abort(500)
+            abort(400, description='Not a JSON')
         if place_name is None:
             abort(400, description='Missing name')
         if user_id is None:
@@ -65,8 +62,5 @@ def place_by_id(place_id):
             place.save()
             return jsonify(place.to_dict()), 200
         except Exception as e:
-            if isinstance(e, HTTPException):
-                abort(400, description='Not a JSON')
-            else:
-                abort(500)
+            abort(400, description='Not a JSON')
     return jsonify(place.to_dict())

@@ -24,10 +24,7 @@ def all_cities(state_id):
             city_created.save()
             return jsonify(city_created.to_dict()), 201
         except Exception as e:
-            if isinstance(e, HTTPException):
-                abort(400, description='Not a JSON')
-            else:
-                abort(500)
+            abort(400, description='Not a JSON')
 
         cities = storage.all('City')
         city_list = []
@@ -55,8 +52,5 @@ def city_by_id(city_id):
             city.save()
             return jsonify(city.to_dict()), 200
         except Exception as e:
-            if isinstance(e, HTTPException):
-                abort(400, description='Not a JSON')
-            else:
-                abort(500)
+            abort(400, description='Not a JSON')
     return jsonify(city.to_dict())

@@ -21,10 +21,7 @@ def all_amenities():
             amenity_created.save()
             return jsonify(amenity_created.to_dict()), 201
         except Exception as e:
-            if isinstance(e, HTTPException):
-                abort(400, description='Not a JSON')
-            else:
-                abort(500)
+            abort(400, description='Not a JSON')
 
         amenities = storage.all('Amenity')
         amenity_list = []
@@ -52,8 +49,5 @@ def amenity_by_id(amenity_id):
             amenity.save()
             return jsonify(amenity.to_dict()), 200
         except Exception as e:
-            if isinstance(e, HTTPException):
-                abort(400, description='Not a JSON')
-            else:
-                abort(500)
+            abort(400, description='Not a JSON')
     return jsonify(amenity.to_dict())

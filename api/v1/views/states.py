@@ -21,10 +21,7 @@ def all_states():
             state_created.save()
             return jsonify(state_created.to_dict()), 201
         except Exception as e:
-            if isinstance(e, HTTPException):
-                abort(400, description='Not a JSON')
-            else:
-                abort(500)
+            abort(400, description='Not a JSON')
 
         states = storage.all('State')
         state_list = []
@@ -52,8 +49,5 @@ def state_by_id(state_id):
             state.save()
             return jsonify(state.to_dict()), 200
         except Exception as e:
-            if isinstance(e, HTTPException):
-                abort(400, description='Not a JSON')
-            else:
-                abort(500)
+            abort(400, description='Not a JSON')
     return jsonify(state.to_dict())

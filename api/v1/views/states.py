@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+""" State objects that handles all default RESTFul API actions """
 from flask import jsonify, request, abort
 from api.v1.views import app_views
 from models import storage
@@ -9,6 +9,9 @@ from werkzeug.exceptions import HTTPException
 
 @app_views.route('states', methods=['POST, GET'], strict_slashes=False)
 def all_states():
+    """
+    Retrieves the list of all State objects:
+    """
     if request.method == 'POST':
         state_created = None
         try:
@@ -33,6 +36,10 @@ def all_states():
 @app_views.route('/states/<state_id>',
                  methods=['GET', 'DELETE', 'PUT'], strict_slashes=False)
 def state_by_id(state_id):
+    """ Retrieves a specific state object:
+        CREATES, DELETES, and UPDATES state objects,
+        and returns error codes.
+        """
     state = storage.get('State', state_id)
     if state is None:
         abort(404)

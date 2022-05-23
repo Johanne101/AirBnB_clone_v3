@@ -95,13 +95,4 @@ class DBStorage:
         """
         count the number of objects in storage
         """
-        new_cls = classes.values()
-
-        if cls is None:
-            return len(self.all())
-
-        for entry in self.all().keys():
-            if cls.__name__ in entry:
-                count += 1
-
-        return count
+        return len(self.all(cls))

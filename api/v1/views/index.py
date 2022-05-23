@@ -7,6 +7,10 @@ from flask import jsonify
 from models import storage
 
 
+classes = {"Amenity": "amenities", "City": "cities", "Place": "places",
+           "Review": "reviews", "State": "states", "User": "users"}
+
+
 @app_views.route('/status', strict_slashes=False)
 def status():
     return jsonify({"status": "OK"})
@@ -19,7 +23,7 @@ def stats():
 
     objs = {}
 
-    for key, value in objs.items():
+    for key, value in classes.items():
         total = storage.count(key)
         objs[value] = total
     objs = jsonify(objs)

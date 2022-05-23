@@ -11,6 +11,7 @@ from models import storage
 def status():
     return jsonify({"status": OK})
 
+
 @app_views.route('stats', strict_slashes=False)
 def stats():
     classes = {"Amenity": "amenities", "City": "cities", "Place": "places",
@@ -23,4 +24,3 @@ def stats():
         objs[value] = total
     objs = jsonify(objs)
     return objs
-

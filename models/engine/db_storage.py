@@ -80,13 +80,14 @@ class DBStorage:
         Returns the object based on the class name and its ID, or
         None if not found
         """
-        if cls not in classes.values():
+        count = 0
+        if cls.__name__ in classes:
+            key = classes[cls.__name__] + '.' + id
+        else:
             return None
 
-        new_cls = models.storage.all(cls)
-        for value in new_cls.values():
-            if (value.id == id):
-                return value
+        if key in self.all().keys():
+            return self.all()[key]
 
         return None
 
@@ -96,11 +97,11 @@ class DBStorage:
         """
         new_cls = classes.values()
 
-        if not cls:
-            count = 0
-            for clss in new_cls:
-                count += len(models.storage.all(clss).values())
-        else:
-            count = len(models.storage.all(cls).values())
+        if cls is None:
+            reutrn len(self.all())
+
+        for entry in self.all().keys():
+            if cls.__name__ in entry:
+                count += 1
 
         return count

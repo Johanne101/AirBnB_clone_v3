@@ -25,7 +25,7 @@ def all_reviews(place_id):
         if user_id is None:
             abort(400, description='Missing user_id')
         user = storage.get('User', user_id)
-        
+
         if user is None:
             abort(404)
         if review_created is None:
@@ -36,6 +36,7 @@ def all_reviews(place_id):
         return jsonify(new_review.to_dict()), 201
     review_list = [rev.to_dict() for rev in place.reviews]
     return jsonify(review_list)
+
 
 @app_views.route('/reviews/<review_id>',
                  methods=['GET', 'DELETE', 'PUT'], strict_slashes=False)

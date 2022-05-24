@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """ first endpoint for status of our API """
 
-from os import getenv
 from flask import Blueprint, Flask, jsonify
+from flask_cors import CORS
 from models import storage
 from api.v1.views import app_views
-from flask_cors import CORS
+from os import getenv
+
 
 app = Flask(__name__)
 app.register_blueprint(app_views)
@@ -26,14 +27,6 @@ def page_not_found(e):
 
 if __name__ == '__main__':
     ''' run api '''
-    hbnb_api_host = getenv('HBNB_API_HOST')
-    hbnb_api_port = getenv('HBNB_API_PORT')
-
-    if hbnb_api_host is None:
-        app.run(host='0.0.0.0', port=hbnb_api_port, threaded=True)
-    elif hbnb_api_port is None:
-        app.run(host=hbnb_api_host, port='5000', threaded=True)
-    elif hbnb_api_host is None and hbnb_api_port is None:
-        app.run(host='0.0.0.0', port='5000', threaded=True)
-    else:
-        app.run(host=hbnb_api_host, port=hbnb_api_port, threaded=True)
+    HOST = getenv('HBNB_API_HOST')
+    PORT = getenv('HBNB_API_PORT')
+    app.run(host=HOST, port=PORT, threaded=True)

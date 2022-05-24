@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+""" first endpoint for status of our API """
 
 from os import getenv
 from flask import Blueprint, Flask, jsonify

@@ -26,11 +26,11 @@ def all_cities(state_id):
         except Exception as e:
             abort(400, description='Not a JSON')
 
-        cities = storage.all('City')
-        city_list = []
-        for city in cities.value():
-            city_list.append(city.to_dict())
-        return jsonify(city_list)
+    cities = storage.all('City')
+    city_list = []
+    for city in cities.value():
+        city_list.append(city.to_dict())
+    return jsonify(city_list)
 
 
 @app_views.route('/cities/<city_id>',

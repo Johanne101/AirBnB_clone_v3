@@ -23,11 +23,11 @@ def all_states():
         except Exception as e:
             abort(400, description='Not a JSON')
 
-        states = storage.all('State')
-        state_list = []
-        for state in states.value():
-            state_list.append(state.to_dict())
-        return jsonify(state_list)
+    states = storage.all('State')
+    state_list = []
+    for state in states.value():
+        state_list.append(state.to_dict())
+    return jsonify(state_list)
 
 
 @app_views.route('/states/<state_id>',

@@ -23,11 +23,11 @@ def all_amenities():
         except Exception as e:
             abort(400, description='Not a JSON')
 
-        amenities = storage.all('Amenity')
-        amenity_list = []
-        for amenity in amenities.value():
-            amenity_list.append(amenity.to_dict())
-        return jsonify(amenity_list)
+    amenities = storage.all('Amenity')
+    amenity_list = []
+    for amenity in amenities.value():
+        amenity_list.append(amenity.to_dict())
+    return jsonify(amenity_list)
 
 
 @app_views.route('/amenities/<amenity_id>',

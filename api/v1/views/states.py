@@ -8,7 +8,7 @@ from models.state import State
 from werkzeug.exceptions import HTTPException
 
 
-@app_views.route('states', methods=['POST, GET'], strict_slashes=False)
+@app_views.route('/states', methods=['POST, GET'], strict_slashes=False)
 def all_states():
     """
     Retrieves the list of all State objects:

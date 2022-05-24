@@ -29,14 +29,11 @@ if __name__ == '__main__':
     hbnb_api_host = getenv('HBNB_API_HOST')
     hbnb_api_port = getenv('HBNB_API_PORT')
 
-    if hbnb_api_host is None and hbnb_api_port is None:
-        app.run(host='0.0.0.0', port=5000, threaded=True)
-    elif hbnb_api_host is None:
-        app.run(host='0.0.0.0', port=hbnb_api_port,
-                threaded=True)
+    if hbnb_api_host is None:
+        app.run(host='0.0.0.0', port=hbnb_api_port, threaded=True)
     elif hbnb_api_port is None:
-        app.run(host=hbnb_api_host, port=5000,
-                threaded=True)
+        app.run(host=hbnb_api_host, port='5000', threaded=True)
+    elif hbnb_api_host is None and hbnb_api_port is None:
+        app.run(host='0.0.0.0', port='5000', threaded=True)
     else:
-        app.run(host=hbnb_api_host, port=5000,
-                threaded=True)
+        app.run(host=hbnb_api_host, port=hbnb_api_port, threaded=True)

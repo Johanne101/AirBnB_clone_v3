@@ -70,8 +70,6 @@ class FileStorage:
         self.reload()
 
     def get(self, cls, id):
-
-        ''' Returns object based on class and its id, or None '''
         key = None
         if cls in classes:
             key = cls + '.' + id
@@ -80,7 +78,4 @@ class FileStorage:
         return self.__objects.get(key)
 
     def count(self, cls=None):
-        """
-        count the number of objects in storage
-        """
         return len(self.all(cls))

@@ -70,12 +70,14 @@ class FileStorage:
         self.reload()
 
     def get(self, cls, id):
-        key = None
-        if cls in classes:
-            key = cls + '.' + id
-        elif cls in classes.values():
-            key = cls.__class__.__name__ + '.' + id
-        return self.__objects.get(key)
+        try:
+            key = cls.__name__ + '.' + id
+        except Exception as e:
+            return None
+
+        if key in self.__objects:
+            return self.__objects[key]
+        return None
 
     def count(self, cls=None):
         return len(self.all(cls))

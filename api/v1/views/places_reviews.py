@@ -8,7 +8,8 @@ from models.review import Review
 from werkzeug.exceptions import HTTPException
 
 
-@app_views.route('reviews', methods=['POST, GET'], strict_slashes=False)
+@app_views.route('/places/<place_id>/reviews', methods=['POST, GET'],
+                 strict_slashes=False)
 def all_reviews(place_id):
     place = storage.get('Place', place_id)
 

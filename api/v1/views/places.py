@@ -8,7 +8,8 @@ from models.place import Place
 from werkzeug.exceptions import HTTPException
 
 
-@app_views.route('places', methods=['POST, GET'], strict_slashes=False)
+@app_views.route('/cities/<city_id>/places', methods=['POST, GET'],
+                 strict_slashes=False)
 def all_places(city_id):
     city = storage.get('City', city_id)
     if city is None:

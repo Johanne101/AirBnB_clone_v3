@@ -8,7 +8,8 @@ from models.city import City
 from werkzeug.exceptions import HTTPException
 
 
-@app_views.route('cities', methods=['POST, GET'], strict_slashes=False)
+@app_views.route('states/<state_id>/cities', methods=['POST, GET'],
+                 strict_slashes=False)
 def all_cities(state_id):
     state = storage.get('State', state_id)
     if state is None:
